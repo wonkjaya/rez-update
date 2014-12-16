@@ -69,9 +69,9 @@ class Shop extends CI_Controller {
 	
 		function category_content(){
 		 for($a=1;$a<=4;$a++){
-			$contents[]=array('metatitle'=>'title_content'.$a,
-					'metaimage'=>'image.png'.$a,
-					'metacontent'=>'content'.$a);
+			$contents[]=array('metatitle'=>'title_content',
+					'metaimage'=>'image.png',
+					'metacontent'=>'content');
 			}
 			$a=array('categories'=>$contents);
 			print_r(json_encode($a));

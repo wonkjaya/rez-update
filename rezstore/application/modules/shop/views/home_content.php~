@@ -68,7 +68,7 @@ $image="";
       <div class="sub_right">
         <div class="sub_items_header">
           <h1><?=anchor(site('detailproduct/'.$id[1]),$title[1])?></h1>
-          <h2><?=$code[1]?></h2>
+          <h2>=> <?=$code[1]?></h2>
         </div>
         <div class="sub_items_image"> <img src="<?=images($image_product[1],'product')?>" width="175" height="170" alt="Sub Item Name" /> </div>
         <div class="sub_items_text">

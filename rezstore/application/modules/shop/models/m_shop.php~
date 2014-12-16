@@ -21,7 +21,7 @@ class M_shop extends CI_Model
 				productdetail.detail
 			');
 	$this->db->from('products');
-	$this->db->join('productdetail', 'productdetail.products_idproduct = products.idproduct','left');
+	$this->db->join('productdetail', 'productdetail.id = products.idproduct','left');
 	$this->db->join('frameworks', 'productdetail.frameworks_idframework = frameworks.idframework','left');
 	$this->db->limit(2);
 	return $this->db->get()->result();

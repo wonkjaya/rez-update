@@ -6,7 +6,7 @@ function site($object=''){
  return site_url('shop/'.$object);
 }
 
-function images($object,$type=''){
+function images($type='',$object){
  if($type !== "") return get_BasePath('images/products/'.$object);
  return get_BasePath('images/'.$object);
 }
