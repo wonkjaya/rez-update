@@ -1,0 +1,4 @@
+rez-update
+==========
+
+inni rezstore
