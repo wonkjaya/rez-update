@@ -1,0 +1,80 @@
+<body>
+<div id="container">
+  <!-- Start of Page Header -->
+  <div id="page_header">
+    <div id="page_heading">
+      <h1><span>Hardware Store</span></h1>
+      <h2><span>Your punchline here</span></h2>
+    </div>
+    <div id="page_headerlinks">
+      <ul>
+        <li><a href="#">Account Wish</a></li>
+        <li><a href="#">List Order</a></li>
+        <li><a href="#">Status</a></li>
+        <li class="last"><a href="#">Shopping Cart</a></li>
+      </ul>
+    </div>
+    <div id="page_headersearch">
+      <h3>Search:</h3>
+      <form action="#">
+        <div>
+          <input type="text" />
+          <input type="image" src="<?=images('button_go.gif')?>" class="button" />
+          <div class="clearthis">&nbsp;</div>
+        </div>
+      </form>
+    </div>
+    <div class="clearthis">&nbsp;</div>
+  </div>
+  <!-- End of Page Header -->
+  <!-- Start of Page Menu -->
+  <div id="page_menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">OurStore</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Promotion</a></li>
+      <li class="last"><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <!-- End of Page Menu -->
+  <!-- Start of Left Sidebar -->
+  <div id="left_sidebar">
+    <script>
+	var url="<?=site('leftside')?>";
+		$(document).ready(function(){
+			$('#left_sidebar').load(url);
+		});
+	</script>
+  </div>
+  <!-- End of Left Sidebar -->
+  <!-- Start of Main Content Area -->
+  <div id="main_content">
+    <script>
+	var url_content="<?=site('home_content')?>";
+		$(document).ready(function(){
+			$('#main_content').load(url_content);
+		});
+	</script>
+  </div>
+  
+  <!-- End of Main Content Area -->
+  <div class="clearthis">&nbsp;</div>
+  <!-- Start of Page Footer -->
+  <div id="page_footer">
+    <div id="product_brands">
+      <ul>
+        <li class="zalcom"><span>Zalcom</span></li>
+        <li class="digital"><span>Digital</span></li>
+        <li class="adept"><span>Adept</span></li>
+        <li class="simtel"><span>Simtel</span></li>
+      </ul>
+    </div>
+    <div id="powered_by"> Powered by <a href="http://www.freewebsitetemplates.com">Free Website Templates</a> </div>
+    <div class="clearthis">&nbsp;</div>
+  </div>
+  <!-- End of Page Footer -->
+</div>
+</body>
+</html>
