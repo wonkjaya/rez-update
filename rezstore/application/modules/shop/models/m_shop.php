@@ -10,25 +10,25 @@ class M_shop extends CI_Model
 	return $this->db->get('metas')->row();
   }
   
-  function select_home_products(){
-	$this->db->select('
-				aproducts.idproduct,
-				products.price,
-				frameworks.frameworkname,
-				products.code,
-				products.productname,
-				products.productimage,
-				productdetail.detail
-			');
-	$this->db->from('products');
-	$this->db->join('productdetail', 'productdetail.products_idproduct = products.idproduct','left');
-	$this->db->join('frameworks', 'productdetail.frameworks_idframework = frameworks.idframework','left');
-	$this->db->limit(2);
-	return $this->db->get()->result();
-  }
+	  function select_home_products(){
+		$this->db->select('
+					products.idproduct,
+					products.price,
+					frameworks.frameworkname,
+					products.code,
+					products.productname,
+					products.productimage,
+					productdetail.detail
+				');
+		$this->db->from('products');
+		$this->db->join('productdetail', 'productdetail.products_idproduct = products.idproduct','left');
+		$this->db->join('frameworks', 'productdetail.frameworks_idframework = frameworks.idframework','left');
+		$this->db->limit(2);
+		return $this->db->get()->result();
+	  }
   
   function select_content($content=''){
-	$this->db->where(array('name'=>$content));
+	$this->db->where($content);
 	return $this->db->get('pages')->result();
   }
   
@@ -36,6 +36,24 @@ class M_shop extends CI_Model
 	$this->db->where(array('status'=>1));
 	return $this->db->get('categories')->result();
   }
+  
+	  function select_category_products(){
+		$this->db->select('
+					products.idproduct,
+					products.price,
+					frameworks.frameworkname,
+					products.code,
+					products.productname,
+					products.productimage,
+					productdetail.detail
+				');
+		$this->db->from('products');
+		$this->db->join('productdetail', 'productdetail.products_idproduct = products.idproduct','left');
+		$this->db->join('frameworks', 'productdetail.frameworks_idframework = frameworks.idframework','left');
+		$this->db->limit(2);
+		$this->db->where(2);
+		return $this->db->get()->result();
+	  }
    
   
 

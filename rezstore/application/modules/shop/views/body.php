@@ -52,7 +52,7 @@
   <!-- Start of Main Content Area -->
   <div id="main_content">
     <script>
-	var url_content="<?=site('home_content')?>";
+	var url_content="<?=site($content)?>";
 		$(document).ready(function(){
 			$('#main_content').load(url_content);
 		});

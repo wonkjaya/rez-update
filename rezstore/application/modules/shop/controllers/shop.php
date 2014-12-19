@@ -53,14 +53,14 @@ class Shop extends CI_Controller {
 		$this->body($data);
 	}
 		function home_content(){
-			$data['home_content']=$this->m->select_content('home');
+			$data['home_content']=$this->m->select_content(array('name'=>'home'));
 			$data['home_products']=$this->m->select_home_products();
 			$this->view('home_content',$data);
 		}
 	
 	function category($id=''){
 		$data['title']='Category';
-		$data['meta']=$this->m->select_meta(array('idmeta'=>2,'sub'=>$id)); // 1 => lihat readme.txt
+		$data['meta']=$this->m->select_meta(array('idmeta'=>$id)); // 1 => lihat readme.txt
 		$data['content']='category_content';
 		$data['control']=$this;
 		$this->header($data);
@@ -68,13 +68,9 @@ class Shop extends CI_Controller {
 	}
 	
 		function category_content(){
-		 for($a=1;$a<=4;$a++){
-			$contents[]=array('metatitle'=>'title_content'.$a,
-					'metaimage'=>'image.png'.$a,
-					'metacontent'=>'content'.$a);
-			}
-			$a=array('categories'=>$contents);
-			print_r(json_encode($a));
+		 	$data['category_content']=$this->m->select_content(array('name'=>'category'));
+			$data['category_products']=$this->m->select_category_products();
+			$this->view('category_content',$data);
 		}
 	
 }
