@@ -44,43 +44,39 @@ $image="";
 	}	
 	?>
     <div class="sub_items">
-      <!-- Start Left Sub Item -->
-      <div class="sub_left">
-        <div class="sub_items_header">
-          <h1><?=anchor(site('detailproduct/'.$id[0]),$title[0])?></h1>
-          <h2><?=$code[0]?></h2>
-        </div>
-        <div class="sub_items_image"> <img src="<?=images($image_product[0],'product')?>" width="167" height="164" alt="Sub Item Name" /> </div>
-        <div class="sub_items_text">
-          <p><?=$content_product[0]?> </p>
-        </div>
-        <div class="sub_items_cartinfo">
-          <div class="price">
-            <h2>$ <?=$price[0]?></h2>
-          </div>
-          <!--div class="addtocart"> <a href="#"><span>Add to Cart</span></a> </div-->
-          <div class="clearthis">&nbsp;</div>
-        </div>
-        <div class="clearthis">&nbsp;</div>
-      </div>
-      <!-- End of Left Sub Item -->
-      <!-- Start Right Sub Item -->
-      <div class="sub_right">
-        <div class="sub_items_header">
-          <h1><?=anchor(site('detailproduct/'.$id[1]),$title[1])?></h1>
-          <h2><?=$code[1]?></h2>
-        </div>
-        <div class="sub_items_image"> <img src="<?=images($image_product[1],'product')?>" width="175" height="170" alt="Sub Item Name" /> </div>
-        <div class="sub_items_text">
-          <p><?=$content_product[1]?> </p>
-        </div>
-        <div class="sub_items_cartinfo">
-          <div class="price">
-            <h2>$ <?=$price[1]?></h2>
-          </div>
-          <!--div class="addtocart"> <a href="#"><span>Add to Cart</span></a> </div-->
-          <div class="clearthis">&nbsp;</div>
-        </div>
+      <?php
+    	$a=0;
+	foreach($home_products as $r){
+		$id=$r->idproduct;
+		$title=strtoupper($r->productname);
+		$code=$r->code;
+		$content_product=$r->detail;
+		$image_product=$r->productimage;
+		$price=number_format($r->price);
+		 $style="sub_left";
+		 if($a%2==1){$style='sub_right';}
+		?>
+		      <div class="<?=$style?>">
+			<div class="sub_items_header">
+			  <h1 style="width:100%"><?=anchor(site('detailproduct/'.$id),$title)?></h1>
+			  <h2><?=$code?></h2>
+			</div>
+			<div class="sub_items_image"> <img src="<?=images($image_product,'product')?>" width="167" height="164" alt="Sub Item Name" /> </div>
+			<div class="sub_items_text">
+			  <p><?=$content_product?> </p>
+			</div>
+			<div class="sub_items_cartinfo">
+			  <div class="price">
+			    <h2>$ <?=$price?></h2>
+			  </div>
+			  <!--div class="addtocart"> <a href="#"><span>Add to Cart</span></a> </div-->
+			  <div class="clearthis">&nbsp;</div>
+			</div>
+			<div class="clearthis">&nbsp;</div>
+		      </div>
+	<?php
+	 $a++;
+	}?>
         <div class="clearthis">&nbsp;</div>
       </div>
       <!-- End of Right Sub Item -->

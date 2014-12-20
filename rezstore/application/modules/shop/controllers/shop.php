@@ -58,18 +58,18 @@ class Shop extends CI_Controller {
 			$this->view('home_content',$data);
 		}
 	
-	function category($id=''){
+	function category($id=2){
 		$data['title']='Category';
 		$data['meta']=$this->m->select_meta(array('idmeta'=>$id)); // 1 => lihat readme.txt
-		$data['content']='category_content';
+		$data['content']='category_content/'.$id;
 		$data['control']=$this;
 		$this->header($data);
 		$this->body($data);
 	}
 	
-		function category_content(){
+		function category_content($id=2){
 		 	$data['category_content']=$this->m->select_content(array('name'=>'category'));
-			$data['category_products']=$this->m->select_category_products();
+			$data['category_products']=$this->m->select_category_products(array('products.idcategory'=>$id));
 			$this->view('category_content',$data);
 		}
 	

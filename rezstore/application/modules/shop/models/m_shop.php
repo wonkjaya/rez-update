@@ -21,9 +21,9 @@ class M_shop extends CI_Model
 					productdetail.detail
 				');
 		$this->db->from('products');
-		$this->db->join('productdetail', 'productdetail.products_idproduct = products.idproduct','left');
-		$this->db->join('frameworks', 'productdetail.frameworks_idframework = frameworks.idframework','left');
-		$this->db->limit(2);
+		$this->db->join('productdetail', 'productdetail.idproduct = products.idproduct','left');
+		$this->db->join('frameworks', 'productdetail.idframework = frameworks.idframework','left');
+		$this->db->limit(2,3);
 		return $this->db->get()->result();
 	  }
   
@@ -37,7 +37,7 @@ class M_shop extends CI_Model
 	return $this->db->get('categories')->result();
   }
   
-	  function select_category_products(){
+	  function select_category_products($param=''){
 		$this->db->select('
 					products.idproduct,
 					products.price,
@@ -48,10 +48,10 @@ class M_shop extends CI_Model
 					productdetail.detail
 				');
 		$this->db->from('products');
-		$this->db->join('productdetail', 'productdetail.products_idproduct = products.idproduct','left');
-		$this->db->join('frameworks', 'productdetail.frameworks_idframework = frameworks.idframework','left');
-		$this->db->limit(2);
-		$this->db->where(2);
+		$this->db->join('productdetail', 'productdetail.idproduct = products.idproduct','left');
+		$this->db->join('frameworks', 'productdetail.idframework = frameworks.idframework','left');
+		$this->db->limit(6);
+		$this->db->where($param);
 		return $this->db->get()->result();
 	  }
    
