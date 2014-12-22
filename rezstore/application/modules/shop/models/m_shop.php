@@ -33,7 +33,7 @@ class M_shop extends CI_Model
   }
   
   function select_categories(){
-	$this->db->where(array('status'=>1));
+	$this->db->where(array('status'=>1,'idcategory !='=>0));
 	return $this->db->get('categories')->result();
   }
   
@@ -48,12 +48,23 @@ class M_shop extends CI_Model
 					productdetail.detail
 				');
 		$this->db->from('products');
-		$this->db->join('productdetail', 'productdetail.idproduct = products.idproduct','left');
-		$this->db->join('frameworks', 'productdetail.idframework = frameworks.idframework','left');
+		$this->db->join('productdetail', 
+			'productdetail.idproduct = products.idproduct','left');
+		$this->db->join('frameworks', 
+			'productdetail.idframework = frameworks.idframework','left');
 		$this->db->limit(6);
 		$this->db->where($param);
 		return $this->db->get()->result();
 	  }
+	  
+	function select_productdetail($param=''){
+		$this->db->join('productdetail','products.idproduct=productdetail.idproduct','left');
+		$this->db->join('lisence','lisence.idlisence=productdetail.idlisence','left');
+		$this->db->join('frameworks','frameworks.idframework=productdetail.idframework','left');
+		$this->db->where($param);
+		$q=$this->db->get('products');
+		return $q->result();
+	}
    
   
 
