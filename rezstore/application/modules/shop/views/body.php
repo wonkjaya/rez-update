@@ -31,11 +31,11 @@
   <div id="page_menu">
     <ul>
       <li><a href="<?=site('home')?>">Home</a></li>
-      <li><a href="<?=site('home')?>">Produk</a></li>
-      <li><a href="<?=site('home')?>">Layanan</a></li>
-      <li><a href="<?=site('home')?>">Kupon Promo</a></li>
-      <li><a href="<?=site('home')?>">Ketentuan</a></li>
-      <li><a href="<?=site('home')?>">Tentukan Project</a></li>
+      <li><a href="<?=site('product')?>">Produk</a></li>
+      <li><a href="<?=site('services')?>">Layanan</a></li>
+      <li><a href="<?=site('promotions')?>">Kupon Promo</a></li>
+      <li><a href="<?=site('terms')?>">Ketentuan</a></li>
+      <li><a href="<?=site('specify')?>">Tentukan Project</a></li>
       <li class="last"><a href="#">Contact</a></li>
     </ul>
   </div>

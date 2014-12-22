@@ -53,24 +53,38 @@ class Shop extends CI_Controller {
 		$this->body($data);
 	}
 		function home_content(){
-			$data['home_content']=$this->m->select_content(array('name'=>'home'));
+			$data['home_content']=$this->m->select_content(array('idcategory'=>0));
 			$data['home_products']=$this->m->select_home_products();
 			$this->view('home_content',$data);
 		}
 	
 	function category($id=2){
 		$data['title']='Category';
-		$data['meta']=$this->m->select_meta(array('idmeta'=>$id)); // 1 => lihat readme.txt
+		$data['meta']=$this->m->select_meta(array('idproduct'=>$id)); // 1 => lihat readme.txt
 		$data['content']='category_content/'.$id;
 		$data['control']=$this;
 		$this->header($data);
 		$this->body($data);
 	}
 	
-		function category_content(){
-		 	$data['category_content']=$this->m->select_content(array('name'=>'category'));
-			$data['category_products']=$this->m->select_category_products();
+		function category_content($id=2){
+		 	$data['category_content']=$this->m->select_content(array('idcategory'=>$id));
+			$data['category_products']=$this->m->select_category_products(array('products.idcategory'=>$id));
 			$this->view('category_content',$data);
+		}
+	
+	function detailproduct($id='',$param=''){
+		$data['title']='Product';
+		$data['meta']=$this->m->select_meta(array('idproduct'=>$id)); // 1 => lihat readme.txt
+		$data['content']='productdetail_content/'.$id;
+		$data['control']=$this;
+		$this->header($data);
+		$this->body($data);
+	}
+	
+		function productdetail_content($id=0){
+		 	$data['productdetail_content']=$this->m->select_productdetail(array('products.idproduct'=>$id));
+			$this->view('productdetail_content',$data);
 		}
 	
 }

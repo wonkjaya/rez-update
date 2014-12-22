@@ -35,6 +35,7 @@
       <li><a href="<?=site('home')?>">Layanan</a></li>
       <li><a href="<?=site('home')?>">Kupon Promo</a></li>
       <li><a href="<?=site('home')?>">Ketentuan</a></li>
+      <li><a href="<?=site('home')?>">Tentukan Project</a></li>
       <li class="last"><a href="#">Contact</a></li>
     </ul>
   </div>

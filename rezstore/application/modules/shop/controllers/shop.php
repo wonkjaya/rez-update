@@ -87,4 +87,13 @@ class Shop extends CI_Controller {
 			$this->view('productdetail_content',$data);
 		}
 	
+	function product($offside=0){
+		$data['title']='Product';
+		$data['meta']=$this->m->select_meta(array('idproduct'=>$id)); // 1 => lihat readme.txt
+		$data['content']='productdetail_content/'.$id;
+		$data['control']=$this;
+		$this->header($data);
+		$this->body($data);
+	}
+	
 }
