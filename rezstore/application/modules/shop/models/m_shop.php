@@ -65,6 +65,13 @@ class M_shop extends CI_Model
 		$q=$this->db->get('products');
 		return $q->result();
 	}
+	
+	function select_products($offside){
+		$offside=number_format($offside);
+		if($offside < 0)$offside=0;
+		$this->db->limit(5,$offside);
+		$this->db->get('products');
+	}
    
   
 

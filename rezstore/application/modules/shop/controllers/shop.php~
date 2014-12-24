@@ -46,7 +46,7 @@ class Shop extends CI_Controller {
 	
 	function home(){
 		$data['title']='Home';
-		$data['meta']=$this->m->select_meta(array('idmeta'=>1)); // 1 => lihat readme.txt
+		$data['meta']=$this->m->select_meta(array('idproduct'=>0)); // 1 => lihat readme.txt
 		$data['content']='home_content';
 		$data['control']=$this;
 		$this->header($data);
@@ -85,6 +85,20 @@ class Shop extends CI_Controller {
 		function productdetail_content($id=0){
 		 	$data['productdetail_content']=$this->m->select_productdetail(array('products.idproduct'=>$id));
 			$this->view('productdetail_content',$data);
+		}
+	
+	function product($offside=0){
+		$data['title']='Product';
+		$data['meta']=$this->m->select_meta(array('idproduct'=>20)); // 20 => lihat readme.txt
+		$data['content']='product_content/'.$offside;
+		$data['control']=$this;
+		$this->header($data);
+		$this->body($data);
+	}
+	
+		function product_content($offside=0){
+		 	$data['product_content']=$this->m->select_products($offside);
+			$this->view('products_content',$data);
 		}
 	
 }
