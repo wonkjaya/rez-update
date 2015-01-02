@@ -43,7 +43,7 @@
 				<td>Nama</td>
 				<td>: </td>
 				<td><?=$title?></td>
-				<td rowspan='7' colspan=2 width=40%><img src="<?=images($image_product,'product')?>" style="width:50;height:50%"></td>
+				<td rowspan='7' colspan=2 width=40%><img src="<?=images($image_product)?>" style="width:50;height:50%"></td>
 			 </tr>
 			 <tr>
 				<td>Framework</td>
@@ -82,7 +82,7 @@
 				<td></td>
 				<td>
 				 <button class='button-default'>Pesan Sekarang!</button>
-				 <button class='button-warning'>Lihat Produk Lain</button>
+				 <button class='button-warning'>Demo</button>
 				</td>
 			 </tr>
 			</table>

@@ -53,7 +53,7 @@ $image="";
 			  <h1><?=anchor(site('detailproduct/'.$id.'/'.strtolower(str_replace(' ','_',$title))),$title)?></h1>
 			  <h2><?=$code?></h2>
 			</div>
-			<div class="sub_items_image"> <img src="<?=images($image_product,'product')?>" width="167" height="164" alt="Sub Item Name" /> </div>
+			<div class="sub_items_image"> <img src="<?=images($image_product)?>" width="167" height="164" alt="Sub Item Name" /> </div>
 			<div class="sub_items_text">
 			  <p><?=$content_product?> </p>
 			</div>

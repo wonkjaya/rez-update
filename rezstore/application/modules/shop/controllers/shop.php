@@ -46,21 +46,21 @@ class Shop extends CI_Controller {
 	
 	function home(){
 		$data['title']='Home';
-		$data['meta']=$this->m->select_meta(array('idproduct'=>0)); // 1 => lihat readme.txt
+		$data['meta']=$this->m->select_meta('pages',array('pages.name'=>'home')); // 1 => lihat readme.txt
 		$data['content']='home_content';
 		$data['control']=$this;
 		$this->header($data);
 		$this->body($data);
 	}
 		function home_content(){
-			$data['home_content']=$this->m->select_content(array('idcategory'=>0));
+			$data['home_content']=$this->m->select_content(array('name'=>'home'));
 			$data['home_products']=$this->m->select_home_products();
 			$this->view('home_content',$data);
 		}
 	
 	function category($id=2){
 		$data['title']='Category';
-		$data['meta']=$this->m->select_meta(array('idproduct'=>$id)); // 1 => lihat readme.txt
+		$data['meta']=$this->m->select_meta('categories',array('idcategory'=>$id)); // 1 => lihat readme.txt
 		$data['content']='category_content/'.$id;
 		$data['control']=$this;
 		$this->header($data);
@@ -75,7 +75,7 @@ class Shop extends CI_Controller {
 	
 	function detailproduct($id='',$param=''){
 		$data['title']='Product';
-		$data['meta']=$this->m->select_meta(array('idproduct'=>$id)); // 1 => lihat readme.txt
+		$data['meta']=$this->m->select_meta('products',array('idproduct'=>$id)); // 1 => lihat readme.txt
 		$data['content']='productdetail_content/'.$id;
 		$data['control']=$this;
 		$this->header($data);
@@ -89,7 +89,7 @@ class Shop extends CI_Controller {
 	
 	function product($offside=0){
 		$data['title']='Product';
-		$data['meta']=$this->m->select_meta(array('idproduct'=>20)); // 20 => lihat readme.txt
+		$data['meta']=$this->m->select_meta('products',array('idproduct'=>20)); // 20 => lihat readme.txt
 		$data['content']='product_content/'.$offside;
 		$data['control']=$this;
 		$this->header($data);

@@ -16,7 +16,7 @@ if(count($meta) == 0){
 ?>
 <title><?=$title?></title>
 <meta property="og:title" content="<?=$title?>"/>
-<meta property="og:image" content="<?=$metaimage?>"/>
+<meta property="og:image" content="<?=images($metaimage)?>"/>
 <meta property="og:url" content="http://<?=$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']?>"/>
 <meta property="og:site_name" content="rezstore.com"/>
 <meta property="og:description" content="<?=$metades?>"/>

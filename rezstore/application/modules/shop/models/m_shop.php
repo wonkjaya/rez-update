@@ -5,9 +5,11 @@ class M_shop extends CI_Model
    return $this->db->escape($str);
   }
   
-  function select_meta($param=''){
+  function select_meta($tableJoin='products',$param=''){
+  	$this->db->select('metas.*');
+  	$this->db->join('metas','metas.idmeta='.$tableJoin.'.metaid','left');
 	$this->db->where($param);
-	return $this->db->get('metas')->row();
+	return $this->db->get($tableJoin)->row();
   }
   
 	  function select_home_products(){

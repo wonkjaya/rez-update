@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 24, 2014 at 03:52 PM
+-- Generation Time: Jan 02, 2015 at 03:34 PM
 -- Server version: 5.5.40-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.5
 
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `frameworks` (
 --
 
 INSERT INTO `frameworks` (`idframework`, `metaid`, `frameworkname`, `description`, `status`) VALUES
-(1, NULL, 'codeigniter', 'codeigniter adalah sebuah framework yang sangat layak untuk website menengah keatas dan dapat diandalkan dalam setiap aktivitas di internet.', 1);
+(1, '50', 'codeigniter', 'codeigniter adalah sebuah framework yang sangat layak untuk website menengah keatas dan dapat diandalkan dalam setiap aktivitas di internet.', 1);
 
 -- --------------------------------------------------------
 
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `lisence` (
 --
 
 INSERT INTO `lisence` (`idlisence`, `metaid`, `lisencename`, `description`, `status`) VALUES
-(1, NULL, 'GPL', 'lisence ini digunakan hanya untuk developer individual saja jangan di publikasi kan tanpa adanya ijin secara tertulis dari pihak ubuntu', 1);
+(1, '30', 'GPL', 'lisence ini digunakan hanya untuk developer individual saja jangan di publikasi kan tanpa adanya ijin secara tertulis dari pihak ubuntu', 1);
 
 -- --------------------------------------------------------
 
@@ -125,14 +125,14 @@ CREATE TABLE IF NOT EXISTS `metas` (
   `metadescription` varchar(200) DEFAULT NULL,
   `status` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`idmeta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=102 ;
 
 --
 -- Dumping data for table `metas`
 --
 
 INSERT INTO `metas` (`idmeta`, `type`, `metatitle`, `metakeywords`, `metaimage`, `metadescription`, `status`) VALUES
-(2, 'category', 'title onlineshop', 'keyword onlineshop', 'noimage.png', 'nodescription', 1),
+(2, 'category', 'title onlineshop', 'keyword onlineshop', 'onlineshop.png', 'nodescription', 1),
 (3, 'category', 'title perkantoran', 'keyword perkantoran', 'noimage.png', 'nodescription', 1),
 (4, 'category', 'title akuntansi', 'keyword akuntansi', 'noimage.png', 'nodescription', 1),
 (5, 'category', 'title kepegawaian', 'keyword kepegawaian', 'noimage.png', 'nodescription', 1),
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `content` text,
   `image` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idpage`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `pages`
@@ -174,7 +174,8 @@ INSERT INTO `pages` (`idpage`, `metaid`, `idcategory`, `name`, `title`, `content
 (5, '5', 4, 'category-4', 'kepegawaian content', 'kepegawaian adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
 (6, '6', 5, 'category-5', 'absensi content', 'absensi adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
 (8, '7', 7, 'category-7', 'perekrutan content', 'perekrutan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
-(9, '8', 8, 'category-8', 'penjualan content', 'penjualan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png');
+(9, '8', 8, 'category-8', 'penjualan content', 'penjualan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
+(10, '9', 9, 'home', 'home', 'penjualan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'home.png');
 
 -- --------------------------------------------------------
 
@@ -229,14 +230,14 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`idproduct`, `metaid`, `idcategory`, `code`, `productname`, `price`, `productimage`, `status`) VALUES
-(100, NULL, 1, 'PG-100', 'produk 001', 2000, 'noimage.png', 1),
-(101, NULL, 2, 'PG-101', 'produk 002', 2050, 'noimage.png', 1),
-(102, NULL, 3, 'PG-102', 'produk 003', 200, 'noimage.png', 1),
-(103, NULL, 4, 'PG-103', 'produk 004', 4540, 'noimage.png', 1),
-(104, NULL, 5, 'PG-104', 'produk 005', 400, 'noimage.png', 1),
-(105, NULL, 6, 'PG-105', 'produk 006', 800, 'noimage.png', 1),
-(106, NULL, 7, 'PG-106', 'produk 007', 900, 'noimage.png', 1),
-(107, NULL, 8, 'PG-107', 'produk 008', 990, 'noimage.png', 1);
+(100, 100, 1, 'PG-100', 'produk 001', 2000, 'products/noimage.png', 1),
+(101, 101, 2, 'PG-101', 'produk 002', 2050, 'products/noimage.png', 1),
+(102, 102, 3, 'PG-102', 'produk 003', 200, 'products/noimage.png', 1),
+(103, 103, 4, 'PG-103', 'produk 004', 4540, 'products/noimage.png', 1),
+(104, 104, 5, 'PG-104', 'produk 005', 400, 'products/noimage.png', 1),
+(105, 105, 6, 'PG-105', 'produk 006', 800, 'products/noimage.png', 1),
+(106, 106, 7, 'PG-106', 'produk 007', 900, 'products/noimage.png', 1),
+(107, 107, 8, 'PG-107', 'produk 008', 990, 'products/noimage.png', 1);
 
 -- --------------------------------------------------------
 

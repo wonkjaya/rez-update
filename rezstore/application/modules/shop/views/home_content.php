@@ -61,7 +61,7 @@ $image="";
 			  <h1 style="width:100%"><?=anchor(site('detailproduct/'.$id),$title)?></h1>
 			  <h2><?=$code?></h2>
 			</div>
-			<div class="sub_items_image"> <img src="<?=images($image_product,'product')?>" width="167" height="164" alt="Sub Item Name" /> </div>
+			<div class="sub_items_image"> <img src="<?=images($image_product)?>" width="167" height="164" alt="Sub Item Name" /> </div>
 			<div class="sub_items_text">
 			  <p><?=$content_product?> </p>
 			</div>

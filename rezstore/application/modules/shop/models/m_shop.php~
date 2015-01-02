@@ -5,9 +5,11 @@ class M_shop extends CI_Model
    return $this->db->escape($str);
   }
   
-  function select_meta($param=''){
+  function select_meta($tableJoin='products',$param=''){
+  	$this->db->select('metas.*');
+  	$this->db->join('metas','metas.idmeta='.$tableJoin.'.metaid','left');
 	$this->db->where($param);
-	return $this->db->get('metas')->row();
+	return $this->db->get($tableJoin)->row();
   }
   
 	  function select_home_products(){
@@ -29,7 +31,7 @@ class M_shop extends CI_Model
   
   function select_content($content=''){
 	$this->db->where($content);
-	return $this->db->get('pages')->result();
+	return $this->db->get('pagesa')->result();
   }
   
   function select_categories(){
@@ -69,7 +71,6 @@ class M_shop extends CI_Model
 	function select_products($offside){
 		$offside=number_format($offside);
 		if($offside < 0)$offside=0;
-		echo $offside;
 		$this->db->limit(5,$offside);
 		$this->db->get('products');
 	}
