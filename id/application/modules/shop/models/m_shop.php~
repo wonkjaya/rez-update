@@ -6,7 +6,7 @@ class M_shop extends CI_Model
   }
   
   function select_meta($tableJoin='products',$param=''){
-  	$this->db->select('metas.*');
+  	$this->db->select('maetas.*');
   	$this->db->join('metas','metas.idmeta='.$tableJoin.'.metaid','left');
 	$this->db->where($param);
 	return $this->db->get($tableJoin)->row();
@@ -69,7 +69,7 @@ class M_shop extends CI_Model
 	}
 	
 	function select_product_categories(){
-		$this->db->select(array('categories.name','categories.url','pages.title','pages.image','pages.content'));
+		$this->db->select(array('categories.idcategory','categories.name','categories.url','pages.title','pages.image','pages.content'));
 		$this->db->join('pages','pages.idcategory=categories.idcategory','left');
 		return $this->db->get('categories')->result();
 	}

@@ -2,16 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php
-if(count($meta) == 0){
-	$title="";
-	$metatitle="";
-	$metaimage="";
-	$metades="";
-}else{
-	$title=$meta->metatitle;
-	$metatitle=$title;
-	$metaimage=$meta->metaimage;
-	$metades=$meta->metadescription;
+$title="rezsoft :: store";
+$metatitle="";
+$metaimage="";
+$metades="";
+if(isset($meta)){
+	if(count($meta) > 0){
+		$title=$meta->metatitle;
+		$metatitle=$title;
+		$metaimage=$meta->metaimage;
+		$metades=$meta->metadescription;
+	}
 }
 ?>
 <title><?=$title?></title>
@@ -22,6 +23,7 @@ if(count($meta) == 0){
 <meta property="og:description" content="<?=$metades?>"/>
 	
 <link rel="stylesheet" href="<?=css('style.css')?>" type="text/css" media="screen" />
+<link rel="icon" href="<?=images('facicon.ico')?>" type="image/gif" sizes="16x16">
 <script src="<?=js('jeasyui/jquery.min.js')?>"></script>
 </head>
 

@@ -7,12 +7,13 @@
       <h2><span>Your punchline here</span></h2>
     </div>
     <div id="page_headerlinks">
-      <ul>
+      <!--ul>
         <li><a href="#">Account Wish</a></li>
         <li><a href="#">List Order</a></li>
         <li><a href="#">Status</a></li>
         <li class="last"><a href="#">Shopping Cart</a></li>
-      </ul>
+      </ul-->
+      <marquee>Segera Transaksi Dan gunakan <b>Kupon promo</b> yang telah tersedia.</marquee>
     </div>
     <div id="page_headersearch">
       <h3>Search:</h3>
@@ -31,11 +32,11 @@
   <div id="page_menu">
     <ul>
       <li><a href="<?=site('home')?>">Home</a></li>
-      <li><a href="<?=site('home')?>">Produk</a></li>
-      <li><a href="<?=site('home')?>">Layanan</a></li>
-      <li><a href="<?=site('home')?>">Kupon Promo</a></li>
-      <li><a href="<?=site('home')?>">Ketentuan</a></li>
-      <li><a href="<?=site('home')?>">Tentukan Project</a></li>
+      <li><a href="<?=site('product')?>">Produk</a></li>
+      <li><a href="<?=site('services')?>">Layanan</a></li>
+      <li><a href="<?=site('promotions')?>">Kupon Promo</a></li>
+      <li><a href="<?=site('terms')?>">Ketentuan</a></li>
+      <li><a href="<?=site('specify')?>">Tentukan Project</a></li>
       <li class="last"><a href="#">Contact</a></li>
     </ul>
   </div>

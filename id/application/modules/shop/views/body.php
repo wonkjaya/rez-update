@@ -7,12 +7,13 @@
       <h2><span>Your punchline here</span></h2>
     </div>
     <div id="page_headerlinks">
-      <ul>
+      <!--ul>
         <li><a href="#">Account Wish</a></li>
         <li><a href="#">List Order</a></li>
         <li><a href="#">Status</a></li>
         <li class="last"><a href="#">Shopping Cart</a></li>
-      </ul>
+      </ul-->
+      <marquee>Segera Transaksi Dan gunakan <b>KUPON PROMO</b> yang telah tersedia.</marquee>
     </div>
     <div id="page_headersearch">
       <h3>Search:</h3>
