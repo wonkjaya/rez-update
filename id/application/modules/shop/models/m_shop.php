@@ -68,11 +68,10 @@ class M_shop extends CI_Model
 		return $q->result();
 	}
 	
-	function select_products($offside){
-		$offside=number_format($offside);
-		if($offside < 0)$offside=0;
-		$this->db->limit(5,$offside);
-		$this->db->get('products');
+	function select_product_categories(){
+		$this->db->select(array('categories.idcategory','categories.name','categories.url','pages.title','pages.image','pages.content'));
+		$this->db->join('pages','pages.idcategory=categories.idcategory','left');
+		return $this->db->get('categories')->result();
 	}
    
   

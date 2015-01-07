@@ -53,7 +53,7 @@ class Shop extends CI_Controller {
 		$this->body($data);
 	}
 		function home_content(){
-			$data['home_content']=$this->m->select_content(array('idcategory'=>0));
+			$data['home_content']=$this->m->select_content(array('name'=>'home'));
 			$data['home_products']=$this->m->select_home_products();
 			$this->view('home_content',$data);
 		}
@@ -89,16 +89,29 @@ class Shop extends CI_Controller {
 	
 	function product($offside=0){
 		$data['title']='Product';
-		$data['meta']=$this->m->select_meta('products',array('idproduct'=>20)); // 20 => lihat readme.txt
-		$data['content']='product_content/'.$offside;
+		$data['meta']=$this->m->select_meta('products',array('idproduct'=>20));
+		$data['content']='product_category';
 		$data['control']=$this;
 		$this->header($data);
 		$this->body($data);
 	}
 	
-		function product_content($offside=0){
-		 	$data['product_content']=$this->m->select_products($offside);
-			$this->view('product_content',$data);
+		function product_category(){
+		 	$data['product_category']=$this->m->select_product_categories();
+			$this->view('product_category',$data);
+		}
+	
+	function services(){
+		$data['title']='Service';
+		$data['meta']=$this->m->select_meta('products',array('idproduct'=>20));
+		$data['content']='not_available';
+		$data['control']=$this;
+		$this->header($data);
+		$this->body($data);
+	}
+	
+		function not_available(){
+			$this->view('not_available');
 		}
 	
 }

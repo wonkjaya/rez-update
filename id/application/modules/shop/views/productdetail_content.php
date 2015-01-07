@@ -22,7 +22,7 @@
 		$product_description=$r->detail;
 		$image_product=$r->productimage;
 		$guarante=$r->guarante;
-		$price=number_format($r->price.'000');
+		$price=number_format($r->price);
 	}
 		?>
 		  <div class="content_detail">
@@ -73,7 +73,7 @@
 			 <tr>
 				<td>Harga</td>
 				<td>: </td>
-				<td><b>Rp. <?=$price?></b>
+				<td><b>$. <?=$price?></b>
 					<br>Hubungi kami sekarang!! dan Dapatkan Harga SEPECIAL!<p>
 				</td>
 			 </tr>
