@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 02, 2015 at 03:34 PM
+-- Generation Time: Jan 08, 2015 at 04:46 PM
 -- Server version: 5.5.40-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.5
 
@@ -45,7 +45,7 @@ INSERT INTO `categories` (`idcategory`, `metaid`, `name`, `url`, `status`) VALUE
 (3, 4, 'sistem akuntansi', 'category/', 1),
 (4, 5, 'sistem kepegawaian', 'category/', 1),
 (5, 6, 'sistem Absensi', 'category/', 1),
-(7, 7, 'sistem Perekrutan', 'category/', 1),
+(7, 7, 'desain web', 'category/', 1),
 (8, 8, 'sistem Penjualan', 'category/', 1);
 
 -- --------------------------------------------------------
@@ -169,13 +169,13 @@ CREATE TABLE IF NOT EXISTS `pages` (
 
 INSERT INTO `pages` (`idpage`, `metaid`, `idcategory`, `name`, `title`, `content`, `image`) VALUES
 (2, '2', 1, 'category-1', 'onlineshop content', 'online shop adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
-(3, '3', 2, 'category-2', 'perkantoran content', 'online shop adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
-(4, '4', 3, 'category-3', 'akuntansi content', 'akuntansi adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
-(5, '5', 4, 'category-4', 'kepegawaian content', 'kepegawaian adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
-(6, '6', 5, 'category-5', 'absensi content', 'absensi adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
-(8, '7', 7, 'category-7', 'perekrutan content', 'perekrutan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
-(9, '8', 8, 'category-8', 'penjualan content', 'penjualan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'onlineshop.png'),
-(10, '9', 9, 'home', 'home', 'penjualan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'home.png');
+(3, '3', 2, 'category-2', 'perkantoran content', 'online shop adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'office.png'),
+(4, '4', 3, 'category-3', 'akuntansi content', 'akuntansi adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'report.png'),
+(5, '5', 4, 'category-4', 'kepegawaian content', 'kepegawaian adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'employe.png'),
+(6, '6', 5, 'category-5', 'absensi content', 'absensi adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'fingerprint.png'),
+(8, '7', 7, 'category-7', 'Desain Web', 'perekrutan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'webdesign.png'),
+(9, '8', 8, 'category-8', 'penjualan content', 'penjualan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'store.png'),
+(10, '20', 9, 'home', 'home', 'penjualan adalah suatu media yang digunakan untuk sebuah transaksi online yang memfokuskan atau menggunakan sistem kerja online yang hanya bisa digunakan oleh orang yang baik saja', 'home.png');
 
 -- --------------------------------------------------------
 
@@ -251,7 +251,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` text,
   `status` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`iduser`, `username`, `password`, `status`) VALUES
+(1, 'rohman', 'cTOKjO4SwE/Cys/iFqp/+TFq5hpZRpSUfeTWgvXm3UYsUm3FJekJ6vryGAql9RqVhbY78hTU0zYjZwHHEi6Lfg==', 1);
 
 -- --------------------------------------------------------
 

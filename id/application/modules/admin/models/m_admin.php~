@@ -7,7 +7,7 @@ class M_admin extends CI_Model
   	if(count($data) > 0){
   		return $data->password;
   	}else{
-  		return 'salah';
+  		return false;
   	}
   }
   
