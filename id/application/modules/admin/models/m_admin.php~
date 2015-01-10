@@ -7,8 +7,13 @@ class M_admin extends CI_Model
   	if(count($data) > 0){
   		return $data->password;
   	}else{
-  		return false;
+  		return 'salah';
   	}
+  }
+  
+  function view_product(){
+  	$this->db->join('product_detail','product_detail.idproduct=products.idproduct','left');
+  	return $this->db->get('products')->result();
   }
   
   

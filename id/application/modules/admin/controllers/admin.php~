@@ -99,13 +99,24 @@ class Admin extends CI_Controller {
 		$this->header($data);
 		$this->body($data);
 	}
-		function home_content(){
-			$this->view('home_content',$data);
+		function home_content($file='home_content'){
+			$data=array();
+			$this->view($file,$data);
 		}
 	
-	function product(){
-	
+	function products(){
+		$this->userdata();
+		$data['title']='Home';
+		$data['content']='product_content';
+		$data['control']=$this;
+		$this->header($data);
+		$this->body($data);
 	}
+		function product_content(){
+			$data=array();
+			$data['']=$this->m->view_product();
+			$this->view('product_content',$data);
+		}
 	
 	function contactus(){
 	

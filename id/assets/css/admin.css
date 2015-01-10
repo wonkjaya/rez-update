@@ -2,4 +2,4 @@ body{margin:0px;padding:0px;}
 .content{width:100%;min-height:100%;margin:0px;}
 .left{width:200px;min-height:400px;border:1px solid;float:left;padding:10px;}
 .right{width:800px;min-height:400px;border:0px solid;float:left;padding-left:20px;}
-table,tr,td{border-spacing:0px;width:100%;}
+table,tr,td,th{border-spacing:0px;border-left:1px solid;}

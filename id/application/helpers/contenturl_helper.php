@@ -5,6 +5,9 @@ function get_BasePath($object){
 function site($object=''){
  return site_url('shop/'.$object);
 }
+function admin_site($object=''){
+ return site_url('admin/'.$object);
+}
 
 function images($object,$type=''){
  if($type !== "") return get_BasePath('images/products/'.$object);

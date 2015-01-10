@@ -11,6 +11,11 @@ class M_admin extends CI_Model
   	}
   }
   
+  function view_product(){
+  	$this->db->join('productdetail','productdetail.idproduct=products.idproduct','left');
+  	return $this->db->get('products')->result();
+  }
+  
   
    
   
