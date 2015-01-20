@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 	function __construct()
 	 {
 		parent::__construct();
-		$this->load->helper(array('url','html','contenturl'));
+		$this->load->helper(array('url','html','adm'));
 		$this->load->model('m_admin','m');
 	 }
 	 
@@ -68,7 +68,7 @@ class Admin extends CI_Controller {
 #------------------------------------------------------------------------
 	
 	function index(){
-		$this->home();
+		$this->products();
 	}
 	
 	function login(){
@@ -116,6 +116,41 @@ class Admin extends CI_Controller {
 			$data=array();
 			$data['product']=$this->m->view_product();
 			$this->view('product_content',$data);
+		}
+	
+	function productdetail($id){
+		$this->userdata();
+		$data['title']='Produk Detail';
+		$data['content']='product_detail';
+		$data['param']=array('products.idproduct'=>$id);
+		$data['control']=$this;
+		$this->header($data);
+		$this->body($data);
+	}
+		function product_detail($param){
+			$data=array();
+			$data['product']=$this->m->view_product_where($param,'detail');
+			$this->view('product_detail',$data);
+		}
+	
+	function new_product(){
+		if($_POST){
+		 
+		}
+		$this->load->helper('form');
+		$this->userdata();
+		$data['title']='Produk Baru';
+		$data['content']='product_new';
+		$data['control']=$this;
+		$this->header($data);
+		$this->body($data);
+	}
+		function product_new(){
+			$data['act']='new';
+			$data['ctg']=$this->m->select_all_categories();
+			$data['fw']=$this->m->select_all_frameworks();
+			$data['lcc']=$this->m->select_all_licence();
+			$this->view('product_form',$data);
 		}
 	
 	function contactus(){

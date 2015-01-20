@@ -10,7 +10,7 @@
  $no=1;
   foreach($product as $r){
  ?>
- <tr onclick="getinfo(<?=$r->id?>)">
+ <tr onclick="getinfo(<?=$r->idproduct?>)">
   <td><?= $no ?></td>
   <td><?= $r->code ?></td>
   <td><?= $r->productname ?></td>

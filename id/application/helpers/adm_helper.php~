@@ -1,12 +1,10 @@
 <?php
+
 function get_BasePath($object){
  return base_url('assets/'.$object);
 }
 function site($object=''){
  return site_url('shop/'.$object);
-}
-function admin_site($object=''){
- return site_url('admin/'.$object);
 }
 
 function images($object,$type=''){
@@ -21,8 +19,4 @@ function css($filename){
 function js($object){
  return get_BasePath('js/'.$object);
 }
-
-
-
-
-//end of file table-helper.php
+?>

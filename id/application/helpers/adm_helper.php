@@ -1,31 +1,22 @@
 <?php
 
-function get_site(){ echo "rezstore.com ";}
-function get_group(){ echo "© REZGroup· ";}
-function site($page=""){return site_url("adm/".$page);}
-
-function get_stylesheet($fileName){
-	return base_url("assets/stylesheet/adm/".$fileName);
+function get_BasePath($object){
+ return base_url('assets/'.$object);
+}
+function site($object=''){
+ return site_url('admin/'.$object);
 }
 
-function get_logo($fileName){
-	return base_url("assets/images/c/".$fileName);
+function images($object,$type=''){
+ if($type !== "") return get_BasePath('images/products/'.$object);
+ return get_BasePath('images/'.$object);
 }
 
-function get_image($fileName){
-	return base_url("assets/images/c/".$fileName);
+function css($filename){
+ return get_BasePath('css/'.$filename);
 }
 
-function product_image($fileName=''){
-	return base_url("assets/images/c/product/".$fileName);
+function js($object){
+ return get_BasePath('js/'.$object);
 }
-
-function get_script($fileName){
-	return base_url("assets/script/adm/".$fileName);
-}
-
-function get_jqueryF($fileName){
-	return base_url("assets/script/jquery-family/".$fileName);
-}
-
 ?>

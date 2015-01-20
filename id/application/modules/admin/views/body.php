@@ -1,6 +1,6 @@
 <body>
 <div class='left'>
- <?=anchor(admin_site('products'),'Produk')?>
+ <?=anchor(site('products'),'Produk')?>
  <hr>
  aasd
  <hr>
@@ -13,7 +13,12 @@
 </div>
 	<div class='right'>
 		<?php
+		if(!isset($param)){
 			if(isset($content))$control->$content();
+		}else{
+			if(isset($content))$control->$content($param);
+		}
+		
 		?>
 	</div>
  </div><!-- class content -->

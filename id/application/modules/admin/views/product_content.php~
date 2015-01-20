@@ -23,6 +23,6 @@
 </table>
 <script>
 function getinfo(id){
- document.location="<?= site_url('admin/productdetail/') ?>" + id;
+ document.location="<?= site_url('admin/productdetail') ?>/" + id;
 }
 </script>
